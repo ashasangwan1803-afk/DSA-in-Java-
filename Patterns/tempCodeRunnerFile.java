@@ -1,44 +1,33 @@
 import java.util.*;
-class Pattern16{
+class Pattern21{
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
         System.out.print("enter n: ");
         int n = sc.nextInt();
 
-        int total_number_of_lines = 2*n+1;
+        int total_number_of_lines = n;
         int current_number_of_lines = 1;
 
         int stars = 1;
-        int spaces = n;
-        int startNum = 1;
+        int spaces = 2;
 
         while(current_number_of_lines <= total_number_of_lines){
             for(int i=1; i<=spaces; i++){
-                System.out.print("\t");
+                System.out.print("  ");
             }
-            int num = startNum;
             for(int i=1; i<=stars; i++){
-                System.out.print(num + "\t");
-                if(i <= stars/2){
-                    num++;
-                }
-                else{
-                    num--;
-                }
-                
+                System.out.print("* ");
             }
-            if(current_number_of_lines <= n){
-                stars += 2;
-                spaces--;
-                startNum++;
+            if(current_number_of_lines <= n/2){
+                stars++;
             }
             else{
-                stars -= 2;
-                spaces++;
-                startNum--;
+                stars--;
             }
+            
             System.out.println();
             current_number_of_lines++;
+
         }
     }
 }
